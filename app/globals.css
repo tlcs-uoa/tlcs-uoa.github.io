@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem; /* clear the sticky nav on anchor jumps */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-uoa-ink font-sans antialiased;
+    font-feature-settings: "kern", "liga", "calt";
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2 {
+    @apply font-display;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: #003270;
+    color: #fff;
+  }
+
+  /* Visible, on-brand focus ring for keyboard users */
+  :focus-visible {
+    outline: 2px solid #3d7ab0;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Centered content column with responsive gutters */
+  .container-page {
+    @apply mx-auto w-full max-w-5xl px-5 sm:px-8;
+  }
+
+  /* Small uppercase eyebrow label used above section headings */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-uoa-blue;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-7 bg-uoa-accent;
+  }
+
+  /* Shared button base: pill-shaped */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors;
+  }
+  .btn-navy {
+    @apply btn bg-uoa-blue text-white hover:bg-uoa-navy;
+  }
+  .btn-outline-navy {
+    @apply btn border border-uoa-blue text-uoa-blue hover:bg-uoa-pale;
+  }
+  .btn-white {
+    @apply btn bg-white text-uoa-navy shadow-lift hover:bg-uoa-pale;
+  }
+  .btn-outline-white {
+    @apply btn border border-white/40 text-white hover:border-white/70 hover:bg-white/10;
+  }
+
+  /* Card surface echoing the resource pack's tcolorboxes */
+  .card {
+    @apply rounded-2xl border border-uoa-blue/10 bg-white p-6 shadow-card;
+  }
+
+  /* Pale callout box with a navy keyline */
+  .callout {
+    @apply rounded-xl border-l-4 border-uoa-blue bg-uoa-pale/60 p-5;
+  }
+}
+
+@layer utilities {
+  /* Clean layered navy wash for the hero and CTA band: no grain, no noise */
+  .bg-navy-wash {
+    background-color: #003270;
+    background-image:
+      radial-gradient(110% 110% at 85% -10%, rgba(102, 153, 187, 0.35) 0%, transparent 45%),
+      linear-gradient(180deg, #00264f 0%, #003270 60%, #002b60 100%);
+  }
+}
