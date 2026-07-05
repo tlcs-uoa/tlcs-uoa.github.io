@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
 //  Single source of truth for all page copy and links.
-//  Content condensed from the TLC resource pack (public/TLC-Resource-Pack.pdf).
+//  Content condensed from the TLC resource pack (public/TLC-Resources-Pack.pdf).
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Prefix a /public asset path with the Pages basePath. next/link applies the
@@ -17,7 +17,7 @@ export const LINKS = {
   /** Programme team contact address. */
   programmeEmail: "teachinglearningcircles@auckland.ac.nz",
   /** Full resource-pack PDF (lives in /public). */
-  resourcePackHref: asset("/TLC-Resource-Pack.pdf"),
+  resourcePackHref: asset("/TLC-Resources-Pack.pdf"),
   /** Deadline shown in the call-to-action. */
   registerDeadline: "9 July",
 } as const;
