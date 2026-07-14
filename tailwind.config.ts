@@ -9,28 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // UoA brand palette, lifted from resources/rp_v4/main.tex
+        // Official University of Auckland 2025 brand palette.
+        // Source: public/UOA_2025_COLOUR_SCHEME.md (UOA_SmallScreens PowerPoint template).
         uoa: {
-          blue: "#0052A3",
-          navy: "#003270",
-          steel: "#3D7AB0",
-          slate: "#9ABCD4",
-          accent: "#6699BB",
-          pale: "#E5EFF7",
-          graybox: "#F4F6FA",
-          ink: "#0C1B2E", // near-black with a blue cast, for body text
+          blue: "#1F2BD4", // Azure — buttons, links, interactive elements
+          navy: "#0C0C48", // Brand Navy — headings, hero/footer, dark surfaces
+          steel: "#0E2841", // Waitematā — dark secondary text
+          slate: "#A5AAEE", // Lavender — muted light text on dark backgrounds
+          accent: "#00CAEF", // Māhina — bright cyan highlights & decorative accents
+          gold: "#FBAE40", // Gold — warm accent (navy + gold pairing)
+          pale: "#E5FAFD", // Ice Blue — very light background wash
+          graybox: "#F4F4F4", // neutral light grey — section backgrounds
+          ink: "#000B35", // Deep Ink — body text
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
+        // Inter for both display and body — the official UoA digital typeface.
+        display: ["var(--font-sans)", "system-ui", "sans-serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         prose: "68ch",
       },
       boxShadow: {
-        card: "0 1px 2px rgba(0,50,112,0.04), 0 12px 32px -16px rgba(0,50,112,0.18)",
-        lift: "0 8px 24px -8px rgba(0,50,112,0.28)",
+        card: "0 1px 2px rgba(12,12,72,0.04), 0 12px 32px -16px rgba(12,12,72,0.18)",
+        lift: "0 8px 24px -8px rgba(12,12,72,0.28)",
       },
       keyframes: {
         "rise-in": {

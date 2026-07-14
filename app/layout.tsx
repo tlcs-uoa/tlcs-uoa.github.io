@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Fraunces } from "next/font/google";
 import "./globals.css";
 
-// Body: Inter is the University of Auckland's brand typeface (local files).
+// Inter is the University of Auckland's official brand typeface, used for both
+// body text and headings (local files). Exposed via --font-sans, which the
+// Tailwind `sans` and `display` families both reference.
 const inter = localFont({
   src: [
     { path: "./fonts/Inter-Regular.otf", weight: "400", style: "normal" },
@@ -13,15 +14,6 @@ const inter = localFont({
   ],
   display: "swap",
   variable: "--font-sans",
-});
-
-// Display: Fraunces lends an editorial, reflective character to headings
-// while staying complementary to the institutional brand.
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  display: "swap",
-  axes: ["opsz", "SOFT"],
-  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -53,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body>
         <a
           href="#main"

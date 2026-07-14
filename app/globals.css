@@ -22,13 +22,13 @@
   }
 
   ::selection {
-    background: #003270;
+    background: #0c0c48; /* Brand Navy */
     color: #fff;
   }
 
   /* Visible, on-brand focus ring for keyboard users */
   :focus-visible {
-    outline: 2px solid #3d7ab0;
+    outline: 2px solid #1f2bd4; /* Azure */
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -93,9 +93,10 @@
 @layer utilities {
   /* Clean layered navy wash for the hero and CTA band: no grain, no noise */
   .bg-navy-wash {
-    background-color: #003270;
+    background-color: #0c0c48; /* Brand Navy */
     background-image:
-      radial-gradient(110% 110% at 85% -10%, rgba(102, 153, 187, 0.35) 0%, transparent 45%),
-      linear-gradient(180deg, #00264f 0%, #003270 60%, #002b60 100%);
+      /* Māhina cyan glow */
+      radial-gradient(110% 110% at 85% -10%, rgba(0, 202, 239, 0.28) 0%, transparent 45%),
+      linear-gradient(180deg, #000b35 0%, #0c0c48 60%, #0a0a3e 100%);
   }
 }
